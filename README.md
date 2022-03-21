@@ -23,6 +23,8 @@ pip install jupyterlab pandas vega_datasets
 pip install altair
 pip install plotly==5.6.0
 pip install ipywidgets
+pip install matplotlib
+pip install jupytab
 ```
 
 Optional, if you use classical Jupyter Notebooks instead of Jupyter Lab:
@@ -38,4 +40,26 @@ jupyter nbextension enable --py widgetsnbextension --sys-prefix
 ```
 source venv/Scripts/activate
 jupyter lab
+```
+
+
+## JupyTab server
+cp. <https://towardsdatascience.com/interactive-simulation-with-tableau-and-jupytab-c26adb1be564>
+
+setup a separate virtual env. for the server
+```
+python -m venv venv-server
+source venv-server/Scripts/activate
+python -m pip install --upgrade pip
+pip install jupytab-server
+```
+
+create a kernel (in the jupyter virtual environment)
+```
+python -m ipykernel install --user --name jupytab-demo
+```
+
+start JupyTab server
+```
+jupytab --config=config.ini
 ```
